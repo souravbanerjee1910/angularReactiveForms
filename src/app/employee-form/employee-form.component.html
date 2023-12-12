@@ -1,0 +1,53 @@
+<h3 class="text-center">Reactive Forms</h3>
+<hr>
+
+<form [formGroup]="employeeForm" class="form-horizontal" (ngSubmit)="onSubmit()">
+  <div class="card text-black">
+    <div class="card-header bg-secondary">
+      <h3 class="panel-title text-white">Create Employee</h3>
+    </div>
+
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-8">
+          <input type="text" id="firstName" class="form-control" formControlName="fullName">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-8">
+          <input type="text" id="lastName" class="form-control" formControlName="lastName">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-8">
+          <input type="text" id="email" class="form-control" formControlName="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="col-sm-2 control-label">Phone Number</label>
+        <div class="col-sm-8">
+          <input type="text" id="phone" class="form-control" formControlName="phone">
+        </div>
+      </div>
+    </div>
+
+    <div class="button">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+
+<div>
+  <h3 class="text-primary">{{employeeForm.get('fullName')?.value}}</h3>
+  <h3 class="text-danger">{{employeeForm.get('lastName')?.value}}</h3>
+  <h3 class="text-success">{{employeeForm.get('email')?.value}}</h3>
+  <h3 class="text-warning">{{employeeForm.get('phone')?.value}}</h3>
+
+</div>
